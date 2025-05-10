@@ -7,6 +7,9 @@ int main(){
    for(i=1;i<=n;i++){
     int k;
     scanf("%d",&k);
+    if(k==0){printf("Row %d: INACTIVE - Energy Level 0\n",i);
+              continue;
+            }
     int sum=0,rsum=0,alsum=0,ct=0,el=0;
     int j;
     for(j=1;j<=k;j++){
