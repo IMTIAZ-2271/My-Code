@@ -1,2 +1,3 @@
 # My-Code
-Exercise: Introduction to GitHub
+Here is my codes that I have practised.
+
