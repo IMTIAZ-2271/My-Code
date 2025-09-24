@@ -1,3 +1,4 @@
 # My-Code
-Here is my codes that I have practised.
+Here are my codes that I have practiced.
+
 
