@@ -1,51 +1,55 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
-#define hurryup                       \
-    ios_base::sync_with_stdio(false); \
-    cin.tie(nullptr);                 \
-    cout.tie(nullptr)
 
-typedef long long ll;
-typedef double d;
+template <typename T, int mul = 0>
+class myclass
+{
+
+private:
+    T x;
+
+public:
+    myclass(T y)
+    {
+        if (mul)
+        {
+            this->x = y * (T)mul;
+        }
+        else
+        {
+            this->x = y;
+        }
+    }
+
+    T getx(){
+        return x;
+    }
+};
+
+template <>
+class myclass<int, 0>
+{
+private:
+    int x;
+
+public:
+    myclass(int y)
+    {
+        this->x = y * 5;
+    }
+    int getx(){
+        return x;
+    }
+};
 int main()
 {
-    hurryup;
-
-    ll n , k;
-    cin >> n >> k;
-
-    vector<ll> input(n);
-    for(ll i = 0; i<n; i++)
-    {
-        cin >> input[i];
-    }
-    while(k--)
-    {
-        ll x;
-        cin >> x;
-        ll index = 0;
-        ll left = 0;
-        ll right = n-1;
-        //ll ans = 0;
-        ll mid ;
-        while(left <= right)
-        {
-            mid = (left + right)/2;
-            if(input[mid]<=x)
-            {
-               //ans  = mid;
-               index = mid + 1;
-               left = mid + 1;
-            }
-            else 
-            {
-                right = mid - 1;
-            }
-        }
-        cout << index << endl;
-    }
-
-
-
-return 0;  
+    myclass<double> d1(1.1);
+    myclass<double, 2> d2(1.1);
+    myclass<double, 3> d3(1.1);
+    cout << d1.getx() << " " << d2.getx() << " " << d3.getx()
+         << "\n";
+    myclass<int, 4> i1(5);
+    myclass<int> i2(5);
+    cout << i1.getx() << " " << i2.getx();
+    return 0;
 }
